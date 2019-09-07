@@ -13,6 +13,13 @@
             "address": "893 Main Boulevard",
             "membership": "Pro",
             "id": 2
+        },
+        {
+            "name": "Doug Crockford",
+            "phone": "7573778233",
+            "address": "45 High Street",
+            "membership": "Gold",
+            "id": 2
         }
     ]
 }
