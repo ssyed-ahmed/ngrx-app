@@ -15,6 +15,7 @@ import { Observable } from 'rxjs';
 export class CustomerListComponent implements OnInit {
 
   customers$: Observable<Customer[]>;
+  error$: Observable<string>;
 
   constructor(private store: Store<any>) { }
 
@@ -25,6 +26,16 @@ export class CustomerListComponent implements OnInit {
         select(fromCustomer.getCustomers)
       )
     });
+    this.error$ = this.store.pipe(select(fromCustomer.getError));
   }
 
+  editCustomer(customer: Customer) {
+    this.store.dispatch(new customerActions.LoadCustomer(customer.id));
+  }
+
+  deleteCustomer(customer: Customer) {
+    if (confirm('Are you sure you want to delete the customer?')) {
+      this.store.dispatch(new customerActions.DeleteCustomer(customer.id));
+    }
+  }
 }
