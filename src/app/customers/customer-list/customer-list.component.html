@@ -6,6 +6,8 @@
       <th scope="col">Phone</th>
       <th scope="col">Address</th>
       <th scope="col">Membership</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
       <th></th>
     </tr>
   </thead>
@@ -19,11 +21,12 @@
       <td>{{customer.phone}}</td>
       <td>{{customer.address}}</td>
       <td>{{customer.membership}}</td>
-      <th>
-        <a (click)=editCustomer(customer)>edit</a>
-        <br>
-        <a (click)=deleteCustomer(customer)>delete</a>
-      </th>
+      <td>
+        <a (click)=editCustomer(customer)><i class="fa fa-edit edit"></i></a>
+      </td>
+      <td>
+        <a (click)=deleteCustomer(customer)><i class="fa fa-times delete"></i></a>
+      </td>
     </tr>
   </tbody>
 </table>
