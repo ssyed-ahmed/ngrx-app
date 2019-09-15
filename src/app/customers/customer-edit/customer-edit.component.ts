@@ -61,7 +61,7 @@ export class CustomerEditComponent implements OnInit {
       id: this.customerForm.get('id').value
     };
 
-    new customerActions.UpdateCustomer(updateCustomer);
+    this.store.dispatch(new customerActions.UpdateCustomer(updateCustomer));
   }
 
 }
